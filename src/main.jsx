@@ -14,6 +14,7 @@ import Dashboard from './componants/Dashboard/Dashboard';
 // import Allcards from './componants/Home/Allcards';
 import Categories from './componants/Home/Categories';
 import DetailsCategory from './componants/Home/DetailsCategory';
+import Cart from './componants/Dashboard/Cart';
 
 const router = createBrowserRouter([
   {
@@ -50,14 +51,16 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard></Dashboard>,
-        loader: ()=>fetch('../Data.json')
+        loader: ()=>fetch('../Data.json'),
+        
 
       },
       {
         path: "/details/:detailId",
         element: <DetailsCategory></DetailsCategory> ,
         loader: ()=>fetch('../Data.json')
-      }
+      },
+      
     ]
   },
 ]);

@@ -3,7 +3,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from "react";
-import { getStorageToCartList } from "../../utils/localStoreg";
+import { getStorageToCartList, getStorageToWishList } from "../../utils/localStoreg";
 
 
 
@@ -14,6 +14,15 @@ const Header = () => {
         const dataCart = getStorageToCartList()
         const dataleng = dataCart.length
         setLeng(dataleng);
+        
+
+
+    })
+    const [lengwish,setLengwish] = useState(0)
+    useEffect(() => {
+        const dataCart = getStorageToWishList()
+        const dataleng = dataCart.length
+        setLengwish(dataleng);
         
 
 
@@ -36,7 +45,7 @@ const Header = () => {
                                 </div>
                                 <div className="flex text-lg space-x-4">
                                     <div className="bg-white text-black flex items-center border p-1 h-9 justify-center  w-9 rounded-full relative"><IoCartOutline className="text-xl" /><span className="absolute -top-2 -right-1 text-white text-xs font-bold">{leng}</span></div>
-                                    <div className="flex bg-white text-black items-center border h-9 justify-center  w-9 rounded-full relative"><FaRegHeart className="text-lg" /> <p className="absolute -top-2 -right-1 text-white text-xs font-bold">0</p></div>
+                                    <div className="flex bg-white text-black items-center border h-9 justify-center  w-9 rounded-full relative"><FaRegHeart className="text-lg" /> <p className="absolute -top-2 -right-1 text-white text-xs font-bold">{lengwish}</p></div>
 
 
                                 </div>
@@ -58,7 +67,7 @@ const Header = () => {
                             </div>
                             <div className="flex text-lg space-x-4">
                                 <div className="bg-white text-black flex items-center border p-1 h-9 justify-center  w-9 rounded-full relative"><IoCartOutline className="text-xl" /><span className="absolute -top-2 -right-1 text-[#9538E2] text-xs font-bold">{leng}</span></div>
-                                <div className="flex bg-white text-black items-center border h-9 justify-center  w-9 rounded-full relative"><FaRegHeart className="text-lg" /> <p className="absolute -top-2 -right-1 text-[#9538E2] text-xs font-bold">0</p></div>
+                                <div className="flex bg-white text-black items-center border h-9 justify-center  w-9 rounded-full relative"><FaRegHeart className="text-lg" /> <p className="absolute -top-2 -right-1 text-[#9538E2] text-xs font-bold">{lengwish}</p></div>
 
 
                             </div>

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLoaderData } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { getStorageToCartList, removecartData } from '../../utils/localStoreg';
+import { getStorageToCartList, getStorageToWishList, removecartData, removeWishListData } from '../../utils/localStoreg';
 import Cart from './Cart';
 import Content from '../Home/content';
+import CartWish from './cartWish';
 
 
 const Dashboard = () => {
@@ -12,19 +13,32 @@ const Dashboard = () => {
 
     const [cartlist, setcartList] = useState([])
     useEffect(() => {
-        
+
         const storedcartList = getStorageToCartList()
         setcartList(storedcartList)
     }, [data])
 
-    const handleRemovedata =(id)=>{
+    const [wishlist, setwishList] = useState([])
+    useEffect(() => {
+
+        const storedwishList = getStorageToWishList()
+        setwishList(storedwishList)
+    }, [data])
+
+    const handleRemovedata = (id) => {
         removecartData(id)
         const storedcartList = getStorageToCartList()
         setcartList(storedcartList)
-        
+
+    }
+    const handleWishListRemovedata = (id) => {
+        removeWishListData(id)
+        const storedwishList = getStorageToWishList()
+        setwishList(storedwishList)
+
     }
 
-    
+
 
 
     console.log(cartlist);
@@ -37,7 +51,7 @@ const Dashboard = () => {
                     <div className='flex justify-center space-x-4'>
 
                         <Tab><Link className={`border-2 py-2 text-white rounded-3xl px-4 hover:bg-white hover:text-black`}>Read List</Link></Tab>
-                        <Tab><Link className={`border-2 py-2 text-white rounded-3xl px-4 hover:bg-white hover:text-black`}>Wish List</Link></Tab>
+                        <Tab><Link className={`border-2 py-2 text-white rounded-3xl px-4 hover:bg-white hover:text-black`} to='/wish'>Wish List</Link></Tab>
                     </div>
                 </TabList>
 
@@ -65,9 +79,9 @@ const Dashboard = () => {
                 <TabPanel>
                     {/* <h2>{wishlist.length}</h2> */} heart
                     <div className='mt-8 grid grid-cols-3 gap-8'>
-                        {/* {
-                        wishlist.map(book => <Card card={book}></Card>)
-                    } */}
+                        {
+                            wishlist.map(cart => <CartWish handleWishListRemovedata={handleWishListRemovedata} cart={cart}></CartWish>)
+                        }
                     </div>
 
 

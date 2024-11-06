@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineClose } from "react-icons/ai";
 
-const Cart = ({cart, handleRemovedata}) => {
+const Cart = ({cart, handleRemovedata, handleWishListRemovedata}) => {
+    const location = useLocation()
     // console.log(cart);
     const {product_title, price, product_image, product_id, Specification, availability, description
         , rating} = cart
@@ -28,7 +29,12 @@ const Cart = ({cart, handleRemovedata}) => {
 
                 </div>
             </div>
-            <div onClick={()=>handleRemovedata(product_id)} className='mr-8 p-1 rounded-full text-red-700 border border-red-500 font-bold cursor-pointer'><AiOutlineClose /></div>
+            
+                <div onClick={()=>{handleRemovedata(product_id)}} className='mr-8 p-1 rounded-full text-red-700 border border-red-500 font-bold cursor-pointer'><AiOutlineClose /></div>
+                
+                
+            
+            
             
             
             

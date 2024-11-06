@@ -4,7 +4,7 @@ import Content from './content';
 import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
-import { addToLocalStorage } from '../../utils/localStoreg';
+import { addToLocalStorage, addWishListToLocalStorage } from '../../utils/localStoreg';
 
 
 const DetailsCategory = () => {
@@ -15,6 +15,7 @@ const DetailsCategory = () => {
     const data = useLoaderData()
     // console.log(data);
     const [detail, setdetail] = useState([])
+    const [detailwish, setdetailwish] = useState([])
     // console.log(detail);
     const { product_title, price, product_image, product_id, Specification, availability, description
         , rating } = detail || {}
@@ -28,9 +29,17 @@ const DetailsCategory = () => {
         setdetail(detailData);
 
     }, [data, detailId])
+    useEffect(() => {
+        const detailData = data.find(item => item.product_id === detailId);
+        setdetailwish(detailData);
+
+    }, [data, detailId])
 
     const handleToCartList = (id)=>{
         addToLocalStorage(id)
+    }
+    const handleToWishList = (id)=>{
+        addWishListToLocalStorage(id)
     }
     return (
         <div className='relative'>
@@ -66,7 +75,7 @@ const DetailsCategory = () => {
                     <div className='flex space-x-3 '>
 
                     <Link onClick={()=> handleToCartList(detail)} className='bg-[#9538E2] text-white py-2 px-4 rounded-3xl font-medium'>Add to Cart</Link>
-                    <Link className="flex bg-white text-black items-center border-2 h-9 justify-center  w-9 rounded-full relative cursor-pointer"><FaRegHeart className="text-lg" /> </Link>
+                    <Link  onClick={()=> handleToWishList(detailwish)} className="flex bg-white text-black items-center border-2 h-9 justify-center  w-9 rounded-full relative cursor-pointer"><FaRegHeart className="text-lg" /> </Link>
 
                     </div>
 
