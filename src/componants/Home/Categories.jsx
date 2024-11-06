@@ -75,7 +75,7 @@ const Categories = () => {
                     </TabList>
                     <div className="w-[100%] gap-5 grid grid-cols-1 lg:grid-cols-3 bg-gray300">
                         {
-                            item.length === 0 && <div className="flex justify-center mt-44 items-center text-5xl font-semibold text-gray-400">No Items here</div> 
+                            item.length === 0 && <div className=" text-center mt-52 w-[500px] text-5xl font-semibold text-gray-400">No Items here</div> 
                         }
 
                         {

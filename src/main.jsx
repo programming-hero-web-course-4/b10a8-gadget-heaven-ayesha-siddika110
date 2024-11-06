@@ -13,6 +13,7 @@ import Dashboard from './componants/Dashboard/Dashboard';
 // import Category from './componants/Home/Category';
 // import Allcards from './componants/Home/Allcards';
 import Categories from './componants/Home/Categories';
+import DetailsCategory from './componants/Home/DetailsCategory';
 
 const router = createBrowserRouter([
   {
@@ -38,11 +39,7 @@ const router = createBrowserRouter([
             
             
           // },
-          // {
-          //   path: "/",
-          //   element: <Allcards></Allcards> ,
-          //   loader: ()=>fetch('./Data.json')
-          // }
+          
 
         ]
       },
@@ -52,8 +49,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <Dashboard></Dashboard>
+        element: <Dashboard></Dashboard>,
+        loader: ()=>fetch('../Data.json')
+
       },
+      {
+        path: "/details/:detailId",
+        element: <DetailsCategory></DetailsCategory> ,
+        loader: ()=>fetch('../Data.json')
+      }
     ]
   },
 ]);

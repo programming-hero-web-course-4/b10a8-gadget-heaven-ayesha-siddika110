@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 
 const AllsigleCard = ({ category }) => {
     // console.log(category);
-    const { product_title, price, product_image } = category || {}
+    const { product_title, price, product_image, product_id } = category || {}
 
     return (
         <div>
@@ -16,7 +18,7 @@ const AllsigleCard = ({ category }) => {
 
                     <h1 className='font-semibold text-xl  '>{product_title}</h1>
                     <p className='font-semibold text-gray-400 flex-grow'>Price: {price}</p>
-                    <button className='text-[#9a35f8] font-semibold py-2 px-4 rounded-3xl border-2 w-[130px] border-[#9a35f8] hover:bg-[#9a35f8] hover:text-white'>Details</button>
+                    <Link to={`/details/${product_id}`} id={product_image}  className='text-[#9a35f8] text-center font-semibold py-2 px-4 rounded-3xl border-2 w-[130px] border-[#9a35f8] hover:bg-[#9a35f8] hover:text-white'>Details</Link>
                 </div>
             </div>
 
