@@ -6,7 +6,7 @@ import "../../index.css"
 
 const Root = () => {
     return (
-        <div className="font-sora">
+        <div className="font-sora bg-red-50">
                 <Header></Header>
                 <div className="min-h-[calc(100vh-440px)]">
 

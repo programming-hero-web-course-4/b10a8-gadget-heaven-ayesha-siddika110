@@ -1,7 +1,11 @@
+import { useLoaderData } from "react-router-dom";
 import img from "../../assets/banner.jpg"
 import Categories from "./Categories";
 
 const Home = () => {
+    const datas = useLoaderData()
+    // console.log(datas);
+    
     return (
         <div>
             <div className="-mt-52">
@@ -12,8 +16,8 @@ const Home = () => {
 
             </div>
             <h1 className="text-4xl font-semibold text-center pt-20 pb-10">Explore Cutting-Edge Gadgets</h1>
-
-            <Categories></Categories>
+            
+            <Categories datas={datas}></Categories>
             
         </div>
     );

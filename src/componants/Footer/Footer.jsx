@@ -2,12 +2,12 @@
 
 const Footer = () => {
     return (
-        <div className="bg-slate-100 py-6">
+        <div className="bg-slate-100 py-6 mt-8">
             <div className="border-b py-5 text-center space-y-2 w-[80%] m-auto">
                 <h1 className="text-3xl font-semibold">Gadget Heaven</h1>
                 <p className="text-sm text-gray-600">Leading the way in cutting-edge technology and innovation.</p>
             </div>
-            <div className="flex w-[50%] m-auto justify-between  text-center py-4">
+            <div className="flex flex-col lg:flex-row gap-4 w-[50%] m-auto justify-between  text-center py-4">
                 <div className="space-y-1">
                     <h1 className="text-2xl">Services</h1>
                     <div className=" text-gray-500 space-y-1">

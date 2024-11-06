@@ -7,10 +7,12 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Header from './componants/Header/Header';
 import Home from './componants/Home/Home';
 import Statistics from './componants/statistics/Statistics';
 import Dashboard from './componants/Dashboard/Dashboard';
+// import Category from './componants/Home/Category';
+// import Allcards from './componants/Home/Allcards';
+import Categories from './componants/Home/Categories';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,30 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: ()=> fetch('../Category.json'),
+        children: [
+          {
+            path: "/category/:category",
+            element: <Categories></Categories>,
+            loader : ()=> fetch('../Data.json')
+
+            
+          },
+          // {
+          //   path: "/categories",
+          //   element: <Categories></Categories>,
+          //   loader : ()=> fetch('../Data.json')
+            
+            
+          // },
+          // {
+          //   path: "/",
+          //   element: <Allcards></Allcards> ,
+          //   loader: ()=>fetch('./Data.json')
+          // }
+
+        ]
       },
       {
         path: "/statistics",

@@ -1,0 +1,33 @@
+[
+  {
+    "product_id": "P1900",
+    "category": "All"
+  },
+    {
+      "product_id": "P1002",
+      "category": "Laptop"
+    },
+
+    {
+      "product_id": "P1004",
+      "category": "Phones"
+    },
+    {
+      "product_id": "P1006",
+      "category": "Accessories"
+    },
+    {
+      "product_id": "P1008",
+      "category": "Smart Watches"
+    },
+
+    {
+      "product_id": "P1010",
+      "category": "Mac Book"
+    },
+    {
+      "product_id": "P1050",
+      "category": "iPad"
+    }
+  ]
+  
