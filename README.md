@@ -4,6 +4,7 @@
 # Requirement Document Link : 
 
 <img src="/public/Batch-10_Assignment-08.pdf"></img>
+[Text describing the PDF](/public/Batch-10_Assignment-08.pdf)
 
 # List of React Fundamental concepts used in the project : 
 
