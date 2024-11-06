@@ -55,11 +55,14 @@ const DetailsCategory = () => {
                     <button className={`py-1 px-2 rounded-lg ${availability ? 'border border-green-400 bg-green-200 text-green-800' : 'border border-red-400 bg-red-200 text-red-600'}`}>In Stock</button>
                     <p className='text-gray-500'>{description}</p>
                     <p className='font-bold'>Specification : </p>
-                    
-                        {/* {
+                    <ol className='list-decimal'>
+
+                        { Specification &&
                             Specification.map(item => (<li className='ml-8 text-gray-500' key={product_id}>{item}</li>))
                         }
-                     */}
+                    
+                    </ol>
+                    
                     <p className='font-bold'>Rating :</p>
                     <div className='flex space-x-2'>
 
