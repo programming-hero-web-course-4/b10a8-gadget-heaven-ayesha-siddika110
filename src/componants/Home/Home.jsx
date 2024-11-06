@@ -1,13 +1,18 @@
 import { useLoaderData } from "react-router-dom";
 import img from "../../assets/banner.jpg"
 import Categories from "./Categories";
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
     const datas = useLoaderData()
     // console.log(datas);
+   
     
     return (
         <div>
+            <Helmet>
+                <title>Home - Gadget Heaven</title>
+            </Helmet>
             <div className="-mt-52">
                 <div className="flex justify-center items-center">
 

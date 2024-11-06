@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useLoaderData } from 'react-router-dom';
-import React, { PureComponent } from 'react';
+// import { useLoaderData } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+
 import {
     ResponsiveContainer,
     ComposedChart,
@@ -68,6 +69,10 @@ const data = [
     }
 ];
 
+// useEffect(() => {
+//     // document.title = 'Statistics - Gadget Heaven';
+//   }, []);
+
 
 
 
@@ -75,6 +80,9 @@ const data = [
 const Statistics = () => {
     return (
         <div>
+            <Helmet>
+                <title>Statistics - Gadget Heaven</title>
+            </Helmet>
             <div className='bg-[#9538E2] py-16'>
 
                 <Content h={`Statistics`} p={`Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!`}></Content>

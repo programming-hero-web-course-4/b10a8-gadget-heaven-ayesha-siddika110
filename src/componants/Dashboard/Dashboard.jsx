@@ -6,10 +6,19 @@ import Cart from './Cart';
 import Content from '../Home/content';
 import CartWish from './cartWish';
 import grpImg from '../../assets/Group.png'
+import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 
 const Dashboard = () => {
     const data = useLoaderData()
+    const navigate = useNavigate();
+    useEffect(() => {
+        document.title = 'Dashboard - Gadget Heaven';
+      }, []);
+     const goHome =()=>{
+        navigate('/')
+     }
 
 
     const [cartlist, setcartList] = useState([])
@@ -62,9 +71,13 @@ const Dashboard = () => {
 
 
 
+
     console.log(cartlist);
     return (
         <div>
+            <Helmet>
+                <title>Statistics - Gadget Heaven</title>
+            </Helmet>
             <Tabs className={` m-auto`}>
                 <TabList className={`bg-[#9538E2] space-y-5 py-14`}>
                     <Content h={`Dashboard`} p={`Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!`}></Content>
@@ -93,6 +106,7 @@ const Dashboard = () => {
                         </div>
 
                         {
+                            // eslint-disable-next-line react/jsx-key
                             cartlist.map(cart => <Cart handleRemovedata={handleRemovedata} cart={cart}></Cart>)
                         }
                     </div>
@@ -101,6 +115,7 @@ const Dashboard = () => {
 
                     <div className='mt-8 grid grid-cols-1 gap-8'>
                         {
+                            // eslint-disable-next-line react/jsx-key
                             wishlist.map(cart => <CartWish handleWishListRemovedata={handleWishListRemovedata} cart={cart}></CartWish>)
                         }
                     </div>
@@ -117,8 +132,9 @@ const Dashboard = () => {
                     <p className=" text-gray-500">total price : {cartlistp}</p>
                     <div className="modal-action">
                         <form method="dialog">
+                            
                             {/* if there is a button in form, it will close the modal */}
-                            <button className=" bg-[#9538E2] text-white py-2 px-5 rounded-3xl text">Close</button>
+                            <button onClick={goHome}  className=" bg-[#9538E2] text-white py-2 px-5 rounded-3xl text">Close</button>
                         </form>
                     </div>
                 </div>

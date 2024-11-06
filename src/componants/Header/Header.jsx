@@ -42,6 +42,7 @@ const Header = () => {
                                     <NavLink to='/'>Home</NavLink>
                                     <NavLink to='/statistics'>Statistics</NavLink>
                                     <NavLink to='/dashboard'>Dashboard</NavLink>
+                                    <NavLink to='/sponsord'>Sponsor</NavLink>
                                 </div>
                                 <div className="flex text-lg space-x-4">
                                     <div className="bg-white text-black flex items-center border p-1 h-9 justify-center  w-9 rounded-full relative"><IoCartOutline className="text-xl" /><span className="absolute -top-2 -right-1 text-white text-xs font-bold">{leng}</span></div>
@@ -64,6 +65,7 @@ const Header = () => {
                                 <NavLink to='/' className={``}>Home</NavLink>
                                 <NavLink to='/statistics'>Statistics</NavLink>
                                 <NavLink to='/dashboard'>Dashboard</NavLink>
+                                <NavLink to='/sponsord'>Sponsor</NavLink>
                             </div>
                             <div className="flex text-lg space-x-4">
                                 <div className="bg-white text-black flex items-center border p-1 h-9 justify-center  w-9 rounded-full relative"><IoCartOutline className="text-xl" /><span className="absolute -top-2 -right-1 text-[#9538E2] text-xs font-bold">{leng}</span></div>

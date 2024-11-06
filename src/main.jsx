@@ -16,6 +16,7 @@ import Categories from './componants/Home/Categories';
 import DetailsCategory from './componants/Home/DetailsCategory';
 import Cart from './componants/Dashboard/Cart';
 import Error from './componants/Error/Error';
+import Sponson from './componants/Sponsor/Sponson';
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
         loader: ()=>fetch('../Data.json'),
         
 
+      },
+      {
+        path: "/sponsord",
+        element: <Sponson></Sponson>
       },
       {
         path: "/details/:detailId",

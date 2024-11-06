@@ -1,4 +1,4 @@
-import React from 'react';
+
 import errorimg from '../../assets/error-page.gif'
 
 const Error = () => {

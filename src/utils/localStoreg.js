@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 
 
 const getStorageToCartList = ()=>{
@@ -16,20 +17,20 @@ const addToLocalStorage = (cart) => {
     const storageList = getStorageToCartList()
     const isExist = storageList.find(item=> item.product_id === cart.product_id)
     if(isExist){
-        alert('id already axixst')
+        toast.error('Id already exists')
     }
     else{
         storageList.push(cart);
         const storageListstr = JSON.stringify(storageList);
         localStorage.setItem('cart-list', storageListstr);
-        alert('success')
+        toast.success('Successfully added to cart list')
     }
 }
 const removecartData = id => {
     const olddata = getStorageToCartList()
     const remaining = olddata.filter(cart => cart.product_id != id)
     localStorage.setItem('cart-list', JSON.stringify(remaining))
-    alert('Successfully Removed!')
+    toast.success('Successfully removed')
   } 
 
 
@@ -51,20 +52,20 @@ const addWishListToLocalStorage = (cart) => {
     const storageList = getStorageToWishList()
     const isExist = storageList.find(item=> item.product_id === cart.product_id)
     if(isExist){
-        alert('id already axixst')
+        toast.error('Id already exists')
     }
     else{
         storageList.push(cart);
         const storageListstr = JSON.stringify(storageList);
         localStorage.setItem('wish-list', storageListstr);
-        alert('success')
+        toast.success('Successfully added to wish list')
     }
 }
 const removeWishListData = id => {
     const olddata = getStorageToWishList()
     const remaining = olddata.filter(cart => cart.product_id != id)
     localStorage.setItem('wish-list', JSON.stringify(remaining))
-    alert('Successfully Removed!')
+    toast.success('Successfully removed')
   } 
 
   
