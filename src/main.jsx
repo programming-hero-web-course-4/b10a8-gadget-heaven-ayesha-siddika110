@@ -15,11 +15,13 @@ import Dashboard from './componants/Dashboard/Dashboard';
 import Categories from './componants/Home/Categories';
 import DetailsCategory from './componants/Home/DetailsCategory';
 import Cart from './componants/Dashboard/Cart';
+import Error from './componants/Error/Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
@@ -46,7 +48,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/statistics",
-        element: <Statistics></Statistics>
+        element: <Statistics></Statistics>,
+        loader : ()=> fetch('../Data.json')
       },
       {
         path: "/dashboard",
